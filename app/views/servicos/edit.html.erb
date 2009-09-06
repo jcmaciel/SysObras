@@ -1,0 +1,28 @@
+<h1>Editing servico</h1>
+
+<% form_for(@servico) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :tipo %><br />
+    <%= f.text_field :tipo %>
+  </p>
+  <p>
+    <%= f.label :nome_do_prestador %><br />
+    <%= f.text_field :nome_do_prestador %>
+  </p>
+  <p>
+    <%= f.label :valor_diario %><br />
+    <%= f.text_field :valor_diario %>
+  </p>
+  <p>
+    <%= f.label :valor_total %><br />
+    <%= f.text_field :valor_total %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @servico %> |
+<%= link_to 'Back', servicos_path %>

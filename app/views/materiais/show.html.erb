@@ -1,0 +1,27 @@
+<p>
+  <b>Nome:</b>
+  <%=h @material.nome %>
+</p>
+
+<p>
+  <b>Quantidade:</b>
+  <%=h @material.quantidade %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%=h @material.valor %>
+</p>
+
+<p>
+  <b>Data da compra:</b>
+  <%=h @material.data_da_compra %>
+</p>
+<p>
+  <b>Fornecedor:</b>
+  <%=h @material.fornecedor.nome %>
+</p>
+
+<%= link_to 'Edit', edit_material_path(@material) %> |
+<%= link_to 'Back', materiais_path %>
+

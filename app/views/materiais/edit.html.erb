@@ -1,0 +1,28 @@
+<h1>Editing material</h1>
+
+<% form_for(@material) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :quantidade %><br />
+    <%= f.text_field :quantidade %>
+  </p>
+  <p>
+    <%= f.label :valor %><br />
+    <%= f.text_field :valor %>
+  </p>
+  <p>
+    <%= f.label :data_da_compra %><br />
+    <%= f.date_select :data_da_compra %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @material %> |
+<%= link_to 'Back', materiais_path %>

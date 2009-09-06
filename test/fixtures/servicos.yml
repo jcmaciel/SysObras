@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tipo: MyString
+  nome_do_prestador: MyString
+  valor_diario: 
+  valor_total: 
+
+two:
+  tipo: MyString
+  nome_do_prestador: MyString
+  valor_diario: 
+  valor_total: 

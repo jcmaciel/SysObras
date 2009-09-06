@@ -1,0 +1,23 @@
+<p>
+  <b>Tipo:</b>
+  <%=h @servico.tipo %>
+</p>
+
+<p>
+  <b>Nome do prestador:</b>
+  <%=h @servico.nome_do_prestador %>
+</p>
+
+<p>
+  <b>Valor diario:</b>
+  <%=h @servico.valor_diario %>
+</p>
+
+<p>
+  <b>Valor total:</b>
+  <%=h @servico.valor_total %>
+</p>
+
+
+<%= link_to 'Edit', edit_servico_path(@servico) %> |
+<%= link_to 'Back', servicos_path %>

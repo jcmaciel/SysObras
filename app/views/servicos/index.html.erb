@@ -1,0 +1,26 @@
+<h1>Listing servicos</h1>
+
+<table>
+  <tr>
+    <th>Tipo</th>
+    <th>Nome do prestador</th>
+    <th>Valor diario</th>
+    <th>Valor total</th>
+  </tr>
+
+<% @servicos.each do |servico| %>
+  <tr>
+    <td><%=h servico.tipo %></td>
+    <td><%=h servico.nome_do_prestador %></td>
+    <td><%=h servico.valor_diario %></td>
+    <td><%=h servico.valor_total %></td>
+    <td><%= link_to 'Show', servico %></td>
+    <td><%= link_to 'Edit', edit_servico_path(servico) %></td>
+    <td><%= link_to 'Destroy', servico, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New servico', new_servico_path %>

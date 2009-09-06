@@ -1,0 +1,41 @@
+
+<h1><b>Fornecedor</b> -   <%=h @fornecedor.nome %></h1>
+<p>  <b>Endereco:</b>
+  <%=h @fornecedor.endereco %>
+ <b>Telefone:</b>
+  <%=h @fornecedor.telefone %>
+</p>
+
+<% unless @fornecedor.materiais.empty? %>
+
+<fieldset>
+  <legend>Materiais</legend>
+
+  <table>
+    <thead>
+        <tr>
+          <td>Nome</td><td>Valor</td><td>Quantidade</td><td>Data da Compra:</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% @fornecedor.materiais.each do |material| %>
+        <tr>
+            <td><%= material.nome %></td>
+            <td><%= material.valor %></td>
+            <td><%= material.quantidade %></td>
+            <td><%= material.data_da_compra %></td>
+        </tr>
+        @valortotal += material.valor
+    <% end %>
+    </tbody>
+  </table>
+
+</fieldset>
+<% end %>
+<%= @valortotal %>
+
+<p>
+<%= link_to 'Edit', edit_fornecedor_path(@fornecedor) %> |
+<%= link_to 'Back', fornecedores_path %>
+</p>
+
