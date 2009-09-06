@@ -52,3 +52,14 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+#materiais {
+  float:left;
+  width:40%;
+  text-align:right;
+}
+#gastostotais {
+  float:left;
+  width:20%;
+  text-align:right;
+}
+

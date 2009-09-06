@@ -4,38 +4,44 @@
   <%=h @fornecedor.endereco %>
  <b>Telefone:</b>
   <%=h @fornecedor.telefone %>
-</p>
 
+<%= link_to 'Editar', edit_fornecedor_path(@fornecedor) %> |
+<%= link_to 'Voltar', fornecedores_path %>
+</p>
 <% unless @fornecedor.materiais.empty? %>
 
-<fieldset>
+<fieldset id="materiais">
   <legend>Materiais</legend>
 
   <table>
     <thead>
         <tr>
-          <td>Nome</td><td>Valor</td><td>Quantidade</td><td>Data da Compra:</td>
+          <td><b>Nome</td><td><b>Valor</td><td><b>Quantidade</td><td><b>Data da Compra</td></b>
         </tr>
     </thead>
     <tbody>
-    <% @fornecedor.materiais.each do |material| %>
+
+    <%
+     @valortotal = 0
+     @fornecedor.materiais.each do |material| %>
         <tr>
             <td><%= material.nome %></td>
             <td><%= material.valor %></td>
             <td><%= material.quantidade %></td>
             <td><%= material.data_da_compra %></td>
         </tr>
-        @valortotal += material.valor
+       <%
+       @valortotal += material.valor
+       %>
     <% end %>
     </tbody>
   </table>
 
 </fieldset>
 <% end %>
-<%= @valortotal %>
+<fieldset id="gastostotais">
+<legend>Total de gastos</legend>
 
-<p>
-<%= link_to 'Edit', edit_fornecedor_path(@fornecedor) %> |
-<%= link_to 'Back', fornecedores_path %>
-</p>
+   R$ <b><%= @valortotal %></b>
+</fieldset>
 
