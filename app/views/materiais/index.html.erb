@@ -1,5 +1,6 @@
 <h1>Lista de materiais</h1>
 
+
 <table>
   <tr>
     <th>Nome</th>
@@ -14,13 +15,20 @@
     <td><%=h material.quantidade %></td>
     <td><%=h material.valor %></td>
     <td><%=h material.data_da_compra %></td>
-    <td><%= link_to 'Show', material %></td>
-    <td><%= link_to 'Edit', edit_material_path(material) %></td>
-    <td><%= link_to 'Destroy', material, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Mostrar', material %></td>
+    <td><%= link_to 'Editar', edit_material_path(material) %></td>
+    <td><%= link_to 'Deletar', material, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
+
+<div id="buscas">
+<% busca2("cime").each do |teste| %>
+ <%= teste.nome %>
+  <%= teste.id %>
+ <% end %>
+</div>
 <br />
 
 <%= link_to 'Cadastrar novo material', new_material_path %>

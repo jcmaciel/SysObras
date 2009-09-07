@@ -10,7 +10,7 @@ class MateriaisController < ApplicationController
     end
   end
 
-  # GET /materiais/1
+    # GET /materiais/1
   # GET /materiais/1.xml
   def show
     @material = Material.find(params[:id])

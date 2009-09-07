@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20090906145351) do
     t.string   "nome_do_prestador"
     t.float    "valor_diario"
     t.float    "valor_total"
+    t.string   "empreitada"
+    t.string   "objeto_da_empreitada"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,5 +1,25 @@
-<h1>New servico</h1>
+<h1>Novo prestador de serviço</h1>
+<%= javascript_include_tag 'jquery' %>
+<script type="text/javascript">
+$(function(){ // FUNÇÃO PARA EXIBIR A DIV QUE ESTA ESCONDIDA
+        $("#servico_empreitada_sim")
+                   .click(function(){
+                   $("#valordiario").hide(1300);
+                   $("#empreitada").show(1300);
 
+                });
+            });
+            $(function(){
+$("#servico_empreitada_não")
+                   .click(function(){
+                   $("#valordiario").show(1300);
+                   $("#empreitada").hide(1300);
+
+                });
+            });
+
+
+    </script>
 <% form_for(@servico) do |f| %>
   <%= f.error_messages %>
 
@@ -11,17 +31,29 @@
     <%= f.label :nome_do_prestador %><br />
     <%= f.text_field :nome_do_prestador %>
   </p>
+  <div id="valordiario">
   <p>
     <%= f.label :valor_diario %><br />
     <%= f.text_field :valor_diario %>
   </p>
+  </div>
+      <%= f.label :empreitada %><br />
+      <%= f.radio_button :empreitada, "Sim"%>Sim
+      <%= f.radio_button :empreitada, "Não"%>Não
+  <div id="empreitada" style="display:none">
   <p>
     <%= f.label :valor_total %><br />
     <%= f.text_field :valor_total %>
   </p>
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.label :objeto_da_empreitada %><br />
+    <%= f.text_field :objeto_da_empreitada %>
+  </p>
+  </div>
+  <p>
+    <%= f.submit 'Criar' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', servicos_path %>
+<%= link_to 'Voltar', servicos_path %>
+

@@ -31,7 +31,7 @@
             <td><%= material.data_da_compra %></td>
         </tr>
        <%
-       @valortotal += material.valor*material.quantidade
+       @valortotal += material.valor
        %>
     <% end %>
     </tbody>

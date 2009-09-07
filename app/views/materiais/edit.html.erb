@@ -1,4 +1,4 @@
-<h1>Editing material</h1>
+<h1>Editando material</h1>
 
 <% form_for(@material) do |f| %>
   <%= f.error_messages %>
@@ -20,9 +20,16 @@
     <%= f.date_select :data_da_compra %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.label :fornecedor_id %><br />
+    <% fornecedores = Fornecedor.all %>
+    <%= f.collection_select :fornecedor_id ,fornecedores, :id, :nome %>
+
+  </p>
+  <p>
+    <%= f.submit 'Atualizar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @material %> |
-<%= link_to 'Back', materiais_path %>
+<%= link_to 'Mostrar', @material %> |
+<%= link_to 'Voltar', materiais_path %>
+
